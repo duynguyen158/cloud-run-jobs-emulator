@@ -1,5 +1,7 @@
 FROM node:21.1.0-slim@sha256:cba276a6db06f49c589bcea35c598b5a960880ed5631bd4407a61c414ec7a9b9 AS base
 
+LABEL org.opencontainers.image.source=https://github.com/duynguyen158/cloud-run-jobs-emulator
+
 ENV ROOT_PATH=/cloud-run-jobs-emulator
 WORKDIR ${ROOT_PATH}
 
