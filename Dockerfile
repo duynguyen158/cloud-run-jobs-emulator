@@ -25,10 +25,6 @@ FROM base as runtime-dev
 RUN apt-get update -y && \
     apt-get install -y procps
 COPY --from=build ${ROOT_PATH}/ ${ROOT_PATH}/
+EXPOSE 8123
 ENTRYPOINT [ "npm" ]
 CMD [ "run", "dev" ]
-
-# ---
-
-FROM base as runtime
-COPY --from=build ${ROOT_PATH} ${ROOT_PATH}
